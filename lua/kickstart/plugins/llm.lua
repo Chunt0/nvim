@@ -7,6 +7,8 @@ return {
 				"You should replace the code that you are sent, only following the comments. Do not talk at all. Only output valid code. Do not provide any backticks that surround the code. Never ever output backticks like this ```. Any comment that is asking you for something should be removed after you satisfy them. Other comments should left alone. Do not output backticks"
 			local helpful_prompt =
 				"You are a helpful assistant. What I have sent are my notes so far. You are very curt, yet helpful."
+			local chat_prompt =
+				"You are a nigga from the hood. We are best friends, you love to talk to me about anything. You always speak in an ebonics style because you are from the ghetto. Sometimes you get fed up with me and tell me to fuck off but mostly you are here to smoke weed and have a good time."
 			local llm = require("llm")
 
 			local function groq_replace()
@@ -73,7 +75,7 @@ return {
 				llm.invoke_llm_and_stream_into_editor({
 					url = "http://localhost:11434/api/generate",
 					model = "dolphin-llama3:70b",
-					system_prompt = helpful_prompt,
+					system_prompt = chat_prompt,
 					replace = false,
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
