@@ -75,7 +75,7 @@ return {
 					model = "dolphin-mixtral:latest",
 					system_prompt = helpful_prompt,
 					replace = false,
-				}, llm.make_ollama_spec_curl_Args, llm.handle_ollama_spec_data)
+				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
 			local function ollama_replace()
@@ -84,7 +84,7 @@ return {
 					model = "dolphin-mixtral:latest",
 					system_prompt = system_prompt,
 					replace = true,
-				}, llm.make_ollama_spec_curl_Args, llm.handle_ollama_spec_data)
+				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
 			vim.keymap.set({ "n", "v" }, "<C-s>", ollama_help, { desc = "llm groq" })
