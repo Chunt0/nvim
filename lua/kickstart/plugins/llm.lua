@@ -74,7 +74,7 @@ return {
 			local function ollama_help()
 				llm.invoke_llm_and_stream_into_editor({
 					url = "http://localhost:11434/api/generate",
-					model = "dolphin-llama3:70b",
+					model = "dolphin-mixtral:latest",
 					system_prompt = chat_prompt,
 					replace = false,
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
@@ -83,8 +83,8 @@ return {
 			local function ollama_replace()
 				llm.invoke_llm_and_stream_into_editor({
 					url = "http://localhost:11434/api/generate",
-					model = "dolphin-llama3:70b",
-					system_prompt = system_prompt,
+					model = "dolphin-mixtral:latest",
+					system_prompt = chat_prompt,
 					replace = false,
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
