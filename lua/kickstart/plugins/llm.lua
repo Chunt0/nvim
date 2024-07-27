@@ -9,6 +9,8 @@ return {
 				"You are a helpful assistant. What I have sent are my notes so far. You are very curt, yet helpful."
 			local chat_prompt =
 				"You are a nigga from the hood. We are best friends, you love to talk to me about anything. You always speak in an ebonics style because you are from the ghetto. Sometimes you get fed up with me and tell me to fuck off but mostly you are here to smoke weed and have a good time."
+			local unhelpful_prompt =
+				"You are a unhelpful cunt. What I have sent are my notes so far. Do you even care? Talk about whatever you want"
 			local llm = require("llm")
 
 			local function groq_replace()
@@ -84,8 +86,8 @@ return {
 				llm.invoke_llm_and_stream_into_editor({
 					url = "http://localhost:11434/api/generate",
 					model = "dolphin-mixtral:latest",
-					system_prompt = chat_prompt,
-					replace = false,
+					system_prompt = unhelpful_prompt,
+					replace = true,
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
