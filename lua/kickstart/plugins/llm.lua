@@ -89,7 +89,7 @@ return {
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
-			vim.keymap.set({ "n", "v" }, "<C-s>", groq_help, { desc = "llm ollama help" })
+			vim.keymap.set({ "n", "v" }, "<C-s>", openai_help, { desc = "llm ollama help" })
 			vim.keymap.set({ "n", "v" }, "<C-b>", ollama_code, { desc = "llm ollama replace" })
 			--vim.keymap.set({ "n", "v" }, "<leader>K", groq_help, { desc = "llm groq_help" })
 			--vim.keymap.set({ "n", "v" }, "<leader>k", groq_replace, { desc = "llm groq_help" })
