@@ -76,25 +76,25 @@ return {
 			local function ollama_help()
 				llm.invoke_llm_and_stream_into_editor({
 					url = "http://localhost:11434/api/generate",
-					model = "dolphin-mixtral:latest",
-					system_prompt = chat_prompt,
+					model = "llama3.1:70b-instruct-q2_k",
+					system_prompt = helpful_prompt,
 					replace = false,
 					context = true,
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
-			local function ollama_replace()
+			local function ollama_code()
 				llm.invoke_llm_and_stream_into_editor({
 					url = "http://localhost:11434/api/generate",
 					model = "dolphin-mixtral:latest",
-					system_prompt = unhelpful_prompt,
+					system_prompt = system_prompt,
 					replace = true,
 					context = false,
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
 			vim.keymap.set({ "n", "v" }, "<C-s>", ollama_help, { desc = "llm ollama help" })
-			vim.keymap.set({ "n", "v" }, "<C-b>", ollama_replace, { desc = "llm ollama replace" })
+			vim.keymap.set({ "n", "v" }, "<C-b>", ollama_code, { desc = "llm ollama replace" })
 			--vim.keymap.set({ "n", "v" }, "<leader>K", groq_help, { desc = "llm groq_help" })
 			--vim.keymap.set({ "n", "v" }, "<leader>k", groq_replace, { desc = "llm groq_help" })
 			--vim.keymap.set({ "n", "v" }, "<leader>L", openai_help, { desc = "llm openai_help" })
