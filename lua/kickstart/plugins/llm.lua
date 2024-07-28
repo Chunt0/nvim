@@ -76,7 +76,7 @@ return {
 			local function ollama_help()
 				llm.invoke_llm_and_stream_into_editor({
 					url = "http://localhost:11434/api/generate",
-					model = "llama3.1:70b-instruct-q2_k",
+					model = "dolphin-mixtral:latest",
 					system_prompt = helpful_prompt,
 					replace = false,
 					context = true,
