@@ -98,7 +98,7 @@ return {
 			end
 
 			vim.keymap.set({ "n", "v" }, "<C-s>", anthropic_help, { desc = "llm ollama help" })
-			vim.keymap.set({ "n", "v" }, "<C-b>", ollama_code, { desc = "llm ollama replace" })
+			--vim.keymap.set({ "n", "v" }, "<C-b>", ollama_code, { desc = "llm ollama replace" })
 			--vim.keymap.set({ "n", "v" }, "<leader>K", groq_help, { desc = "llm groq_help" })
 			--vim.keymap.set({ "n", "v" }, "<leader>k", groq_replace, { desc = "llm groq_help" })
 			--vim.keymap.set({ "n", "v" }, "<leader>L", openai_help, { desc = "llm openai_help" })
