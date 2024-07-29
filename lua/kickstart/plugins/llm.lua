@@ -3,9 +3,14 @@ return {
 		"Chunt0/llm.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
+			local groq = require("groq")
+			local openai = require("openai")
+			local anthropic = require("anthropic")
+			local ollama = require("ollama")
+			--[[
 			local llm = require("llm")
 			local prompts = require("prompts")
-			local function groq_replace()
+			local function groq_code()
 				llm.invoke_llm_and_stream_into_editor({
 					url = "https://api.groq.com/openai/v1/chat/completions",
 					model = "llama3-70b-8192",
@@ -27,7 +32,7 @@ return {
 				}, llm.make_groq_spec_curl_args, llm.handle_groq_spec_data)
 			end
 
-			local function openai_replace()
+			local function openai_code()
 				llm.invoke_llm_and_stream_into_editor({
 					url = "https://api.openai.com/v1/chat/completions",
 					model = "gpt-4o",
@@ -49,6 +54,26 @@ return {
 				}, llm.make_openai_spec_curl_args, llm.handle_openai_spec_data)
 			end
 
+			local function openai_en2ch()
+				llm.invoke_llm_and_stream_into_editor({
+					url = "https://api.openai.com/v1/chat/completions",
+					model = "gtp-40",
+					system_prompt = prompts.en2ch_prompt,
+					replace = false,
+					framework = "OPENAI",
+				}, llm.make_openai_spec_curl_args, llm.handle_openai_spec_data)
+			end
+
+			local function openai_en2ar()
+				llm.invoke_llm_and_stream_into_editor({
+					url = "https://api.openai.com/v1/chat/completions",
+					model = "gtp-40",
+					system_prompt = prompts.en2ar_prompt,
+					replace = false,
+					framework = "OPENAI",
+				}, llm.make_openai_spec_curl_args, llm.handle_openai_spec_data)
+			end
+
 			local function anthropic_help()
 				llm.invoke_llm_and_stream_into_editor({
 					url = "https://api.anthropic.com/v1/messages",
@@ -60,7 +85,7 @@ return {
 				}, llm.make_anthropic_spec_curl_args, llm.handle_anthropic_spec_data)
 			end
 
-			local function anthropic_replace()
+			local function anthropic_code()
 				llm.invoke_llm_and_stream_into_editor({
 					url = "https://api.anthropic.com/v1/messages",
 					model = "claude-3-5-sonnet-20240620",
@@ -103,15 +128,15 @@ return {
 					framework = "OLLAMA",
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
-
-			vim.keymap.set({ "n", "v" }, "<C-s>", groq_help, { desc = "llm ollama help" })
-			--vim.keymap.set({ "n", "v" }, "<C-b>", ollama_code, { desc = "llm ollama replace" })
-			--vim.keymap.set({ "n", "v" }, "<leader>K", groq_help, { desc = "llm groq_help" })
-			--vim.keymap.set({ "n", "v" }, "<leader>k", groq_replace, { desc = "llm groq_help" })
-			--vim.keymap.set({ "n", "v" }, "<leader>L", openai_help, { desc = "llm openai_help" })
-			--vim.keymap.set({ "n", "v" }, "<leader>l", openai_replace, { desc = "llm openai" })
-			--vim.keymap.set({ "n", "v" }, "<leader>I", anthropic_help, { desc = "llm anthropic_help" })
-			--vim.keymap.set({ "n", "v" }, "<leader>i", anthropic_replace, { desc = "llm anthropic" })
+      ]]
+			vim.keymap.set({ "n", "v" }, "<C-s>", ollama.help, { desc = "llm ollama help" })
+			vim.keymap.set({ "n", "v" }, "<C-S>", ollama.code, { desc = "llm ollama replace" })
+			vim.keymap.set({ "n", "v" }, "<leader>K", groq.help, { desc = "llm groq_help" })
+			vim.keymap.set({ "n", "v" }, "<leader>k", groq.code, { desc = "llm groq_help" })
+			vim.keymap.set({ "n", "v" }, "<leader>L", openai.help, { desc = "llm openai_help" })
+			vim.keymap.set({ "n", "v" }, "<leader>l", openai.code, { desc = "llm openai" })
+			vim.keymap.set({ "n", "v" }, "<leader>I", anthropic.help, { desc = "llm anthropic_help" })
+			vim.keymap.set({ "n", "v" }, "<leader>i", anthropic.code, { desc = "llm anthropic" })
 		end,
 	},
 }
