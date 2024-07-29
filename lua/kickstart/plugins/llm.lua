@@ -97,7 +97,19 @@ return {
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
-			vim.keymap.set({ "n", "v" }, "<C-s>", ollama_code, { desc = "llm ollama help" })
+			local en2ch_prompt = "Translate the following into chinese: "
+			local function ollama_en2ch()
+				llm.invoke_llm_and_stream_into_editor({
+					url = "http://localhost:11434/api/generate",
+					model = "yi:34b",
+					system_prompt = en2ch_prompt,
+					replace = false,
+					context = false,
+					framework = "OLLAMA",
+				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
+			end
+
+			vim.keymap.set({ "n", "v" }, "<C-s>", ollama_en2ch, { desc = "llm ollama help" })
 			--vim.keymap.set({ "n", "v" }, "<C-b>", ollama_code, { desc = "llm ollama replace" })
 			--vim.keymap.set({ "n", "v" }, "<leader>K", groq_help, { desc = "llm groq_help" })
 			--vim.keymap.set({ "n", "v" }, "<leader>k", groq_replace, { desc = "llm groq_help" })
