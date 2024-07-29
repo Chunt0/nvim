@@ -16,6 +16,7 @@ return {
 					api_key_name = "GROQ_API_KEY",
 					system_prompt = system_prompt,
 					replace = true,
+					framework = "GROQ",
 				}, llm.make_groq_spec_curl_args, llm.handle_groq_spec_data)
 			end
 
@@ -26,6 +27,7 @@ return {
 					api_key_name = "GROQ_API_KEY",
 					system_prompt = helpful_prompt,
 					replace = false,
+					framework = "GROQ",
 				}, llm.make_openai_spec_curl_args, llm.handle_openai_spec_data)
 			end
 
@@ -36,6 +38,7 @@ return {
 					api_key_name = "OPENAI_API_KEY",
 					system_prompt = system_prompt,
 					replace = true,
+					framework = "OPENAI",
 				}, llm.make_openai_spec_curl_args, llm.handle_openai_spec_data)
 			end
 
@@ -46,6 +49,7 @@ return {
 					api_key_name = "OPENAI_API_KEY",
 					system_prompt = helpful_prompt,
 					replace = false,
+					framework = "OPENAI",
 				}, llm.make_openai_spec_curl_args, llm.handle_openai_spec_data)
 			end
 
@@ -56,6 +60,7 @@ return {
 					api_key_name = "ANTHROPIC_API_KEY",
 					system_prompt = helpful_prompt,
 					replace = false,
+					framework = "ANTHROPIC",
 				}, llm.make_anthropic_spec_curl_args, llm.handle_anthropic_spec_data)
 			end
 
@@ -66,6 +71,7 @@ return {
 					api_key_name = "ANTHROPIC_API_KEY",
 					system_prompt = system_prompt,
 					replace = true,
+					framework = "ANTHROPIC",
 				}, llm.make_anthropic_spec_curl_args, llm.handle_anthropic_spec_data)
 			end
 
@@ -76,6 +82,7 @@ return {
 					system_prompt = helpful_prompt,
 					replace = false,
 					context = true,
+					framework = "OLLAMA",
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
@@ -86,6 +93,7 @@ return {
 					system_prompt = system_prompt,
 					replace = true,
 					context = false,
+					framework = "OLLAMA",
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
