@@ -7,6 +7,10 @@ return {
 				"You should replace the code that you are sent, only following the comments. Do not talk at all. Only output valid code. Do not provide any backticks that surround the code. Never ever output backticks like this ```. Any comment that is asking you for something should be removed after you satisfy them. Other comments should left alone. Do not output backticks"
 			local helpful_prompt =
 				"You are a helpful assistant. What I have sent are my notes so far. You are very curt, yet helpful."
+			local en2ch_prompt =
+				"You are a helpful assistant. Your goal is to translate text. You will not add anything to the text or output and commentary about the text you generate. Do not add any notes or warnings. Translate the following into chinese: "
+			local en2ar_prompt =
+				"You are a helpful assistant. Your goal is to translate text. You will not add anything to the text or output and commentary about the text you generate. Do not add any notes or warnings. Translate the following into arabic: "
 			local llm = require("llm")
 
 			local function groq_replace()
@@ -47,7 +51,7 @@ return {
 					url = "https://api.openai.com/v1/chat/completions",
 					model = "gpt-4o",
 					api_key_name = "OPENAI_API_KEY",
-					system_prompt = helpful_prompt,
+					system_prompt = en2ar_prompt,
 					replace = false,
 					framework = "OPENAI",
 				}, llm.make_openai_spec_curl_args, llm.handle_openai_spec_data)
@@ -97,8 +101,6 @@ return {
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
-			local en2ch_prompt =
-				"You are a helpful assistant. Your goal is to translate text. You will not add anything to the text or output and commentary about the text you generate. Do not add any notes or warnings. Translate the following into chinese: "
 			local function ollama_en2ch()
 				llm.invoke_llm_and_stream_into_editor({
 					url = "http://localhost:11434/api/generate",
@@ -110,7 +112,7 @@ return {
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
-			vim.keymap.set({ "n", "v" }, "<C-s>", ollama_en2ch, { desc = "llm ollama help" })
+			vim.keymap.set({ "n", "v" }, "<C-s>", openai_help, { desc = "llm ollama help" })
 			--vim.keymap.set({ "n", "v" }, "<C-b>", ollama_code, { desc = "llm ollama replace" })
 			--vim.keymap.set({ "n", "v" }, "<leader>K", groq_help, { desc = "llm groq_help" })
 			--vim.keymap.set({ "n", "v" }, "<leader>k", groq_replace, { desc = "llm groq_help" })
