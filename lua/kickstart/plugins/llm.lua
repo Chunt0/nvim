@@ -103,7 +103,7 @@ return {
 					url = "http://localhost:11434/api/generate",
 					model = "yi:34b",
 					system_prompt = en2ch_prompt,
-					replace = false,
+					replace = true,
 					context = false,
 					framework = "OLLAMA",
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
