@@ -97,7 +97,8 @@ return {
 				}, llm.make_ollama_spec_curl_args, llm.handle_ollama_spec_data)
 			end
 
-			local en2ch_prompt = "Translate the following into chinese: "
+			local en2ch_prompt =
+				"You are a helpful assistant. Your goal is to translate text. You will not add anything to the text or output and commentary about the text you generate. Do not add any notes or warnings. Translate the following into chinese: "
 			local function ollama_en2ch()
 				llm.invoke_llm_and_stream_into_editor({
 					url = "http://localhost:11434/api/generate",
