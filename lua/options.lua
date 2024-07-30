@@ -65,7 +65,7 @@ vim.opt.colorcolumn = "80"
 -- Open nvim with a terminal
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
-		vim.cmd("split | wincmd j | terminal ")
+		vim.cmd("split | resize 10% | wincmd j | terminal ")
 		vim.cmd("wincmd k ")
 	end,
 })
