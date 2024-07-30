@@ -62,4 +62,7 @@ vim.opt.scrolloff = 10
 -- Show the 80th column
 vim.opt.colorcolumn = "80"
 
+-- Open nvim with a terminal
+vim.api.nvim_create_autocmd("VimEnter", { command = "split | wincmd j | terminal" })
+
 -- vim: ts=2 sts=2 sw=2 et
