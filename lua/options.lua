@@ -63,6 +63,10 @@ vim.opt.scrolloff = 10
 vim.opt.colorcolumn = "80"
 
 -- Open nvim with a terminal
-vim.api.nvim_create_autocmd("VimEnter", { command = "split | wincmd j | terminal" })
-
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		vim.cmd("split | wincmd j | terminal ")
+		vim.cmd("wincmd k ")
+	end,
+})
 -- vim: ts=2 sts=2 sw=2 et
