@@ -7,7 +7,7 @@ return {
 			local openai = require("openai")
 			local anthropic = require("anthropic")
 			local perplexity = require("perplexity")
-			local ollama = require("ollama")
+			--local ollama = require("ollama")
 
 			--vim.keymap.set({ "n", "v" }, "<leader>J", ollama.ch2en, { desc = "llm ollama help" })
 			--vim.keymap.set({ "n", "v" }, "<leader>j", ollama.en2ch, { desc = "llm ollama replace" })
