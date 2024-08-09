@@ -9,14 +9,15 @@ return {
 			local perplexity = require("perplexity")
 			local prompts = require("prompts")
 			local models = require("models")
-			local my_prompts = require("/custom/my_prompts")
+			local my_prompts = require("custom/my_prompts")
 			local my_models = require("custom/my_models")
 
 			models.perplexity = my_models.perplexity.perplexity_chat
-			models.openai = my_models.openai.gpt_3_5
-			models.anthropic = my_models.anthropic.claude_opus
-			models.groq = my_models.groq.mixtral_8x7b
-			prompts.prompt = my_prompts.pirate_prompt
+			models.openai = my_models.openai.gpt_4o
+			models.anthropic = my_models.anthropic.claude_sonnet
+			models.groq = my_models.groq.gemma_2
+
+			prompts.system_prompt = my_prompts.helpful_prompt
 
 			vim.keymap.set({ "n", "v" }, "<leader>H", anthropic.invoke, { desc = "llm anthropic" })
 			vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.invoke, { desc = "llm perplexity" })
