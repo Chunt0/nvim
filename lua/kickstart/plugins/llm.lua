@@ -17,7 +17,7 @@ return {
 			models.anthropic = my_models.anthropic.claude_sonnet
 			models.groq = my_models.groq.gemma_2
 
-			prompts.system_prompt = my_prompts.helpful_prompt
+			prompts.system_prompt = my_prompts.system_prompt
 
 			vim.keymap.set({ "n", "v" }, "<leader>H", anthropic.invoke, { desc = "llm anthropic" })
 			vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.invoke, { desc = "llm perplexity" })
