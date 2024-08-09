@@ -8,14 +8,21 @@ return {
 			local anthropic = require("anthropic")
 			local perplexity = require("perplexity")
 			local prompts = require("prompts")
-			local my_prompts = require("/kickstart/plugins/my_prompts")
+			local models = require("models")
+			local my_prompts = require("/custom/my_prompts")
+			local my_models = require("custom/my_models")
 
+			models.perplexity = my_models.perplexity.perplexity_chat
+			models.openai = my_models.openai.gpt_3_5
+			models.anthropic = my_models.anthropic.claude_opus
+			models.groq = my_models.groq.mixtral_8x7b
 			prompts.prompt = my_prompts.pirate_prompt
-			vim.keymap.set({ "n", "v" }, "<leader>H", anthropic.invoke, { desc = "llm anthropic_help" })
-			vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.invoke, { desc = "llm perplexity_help" })
-			vim.keymap.set({ "n", "v" }, "<leader>K", groq.invoke, { desc = "llm groq_help" })
-			vim.keymap.set({ "n", "v" }, "<leader>L", openai.invoke, { desc = "llm openai_help" })
-			vim.keymap.set({ "n", "v" }, "<leader>l", openai.code, { desc = "llm openai_code" })
+
+			vim.keymap.set({ "n", "v" }, "<leader>H", anthropic.invoke, { desc = "llm anthropic" })
+			vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.invoke, { desc = "llm perplexity" })
+			vim.keymap.set({ "n", "v" }, "<leader>K", groq.invoke, { desc = "llm groq" })
+			vim.keymap.set({ "n", "v" }, "<leader>L", openai.invoke, { desc = "llm openai" })
+			vim.keymap.set({ "n", "v" }, "<leader>l", openai.code, { desc = "llm openai code" })
 		end,
 	},
 }
