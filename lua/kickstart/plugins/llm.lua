@@ -7,17 +7,14 @@ return {
 			local openai = require("openai")
 			local anthropic = require("anthropic")
 			local perplexity = require("perplexity")
-			--local ollama = require("ollama")
+			local prompts = require("prompts")
+			local my_prompts = require("/kickstart/plugins/my_prompts")
 
-			--vim.keymap.set({ "n", "v" }, "<leader>J", ollama.ch2en, { desc = "llm ollama help" })
-			--vim.keymap.set({ "n", "v" }, "<leader>j", ollama.en2ch, { desc = "llm ollama replace" })
-			vim.keymap.set({ "n", "v" }, "<leader>H", anthropic.help, { desc = "llm anthropic_help" })
-			vim.keymap.set({ "n", "v" }, "<leader>h", anthropic.code, { desc = "llm anthropic_code" })
-			vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.help, { desc = "llm perplexity_help" })
-			vim.keymap.set({ "n", "v" }, "<leader>j", perplexity.code, { desc = "llm perplexity_code" })
-			vim.keymap.set({ "n", "v" }, "<leader>K", groq.help, { desc = "llm groq_help" })
-			vim.keymap.set({ "n", "v" }, "<leader>k", groq.code, { desc = "llm groq_code" })
-			vim.keymap.set({ "n", "v" }, "<leader>L", openai.help, { desc = "llm openai_help" })
+			prompts.prompt = my_prompts.pirate_prompt
+			vim.keymap.set({ "n", "v" }, "<leader>H", anthropic.invoke, { desc = "llm anthropic_help" })
+			vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.invoke, { desc = "llm perplexity_help" })
+			vim.keymap.set({ "n", "v" }, "<leader>K", groq.invoke, { desc = "llm groq_help" })
+			vim.keymap.set({ "n", "v" }, "<leader>L", openai.invoke, { desc = "llm openai_help" })
 			vim.keymap.set({ "n", "v" }, "<leader>l", openai.code, { desc = "llm openai_code" })
 		end,
 	},
