@@ -13,6 +13,8 @@ return {
 			local my_models = require("custom/my_models")
 			local vars = require("variables")
 
+			prompts.system_prompt = my_prompts.faithful_prompt
+
 			vim.keymap.set({ "n", "v" }, "<leader>H", groq.invoke, { desc = "llm groq" })
 			vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.invoke, { desc = "llm perplexity" })
 			vim.keymap.set({ "n", "v" }, "<leader>K", anthropic.invoke, { desc = "llm anthropic" })
