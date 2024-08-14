@@ -37,6 +37,9 @@ vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window sma
 vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
 vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
 
+-- Open Terminal, this will open a new terminal buffer!
+vim.keymap.set("n", "|", [[<cmd>terminal<cr>]])
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
