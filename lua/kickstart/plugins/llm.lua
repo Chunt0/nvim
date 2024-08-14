@@ -13,9 +13,9 @@ return {
 			local my_models = require("custom/my_models")
 			local vars = require("variables")
 
-			vim.keymap.set({ "n", "v" }, "<leader>H", anthropic.invoke, { desc = "llm anthropic" })
+			vim.keymap.set({ "n", "v" }, "<leader>H", groq.invoke, { desc = "llm groq" })
 			vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.invoke, { desc = "llm perplexity" })
-			vim.keymap.set({ "n", "v" }, "<leader>K", groq.invoke, { desc = "llm groq" })
+			vim.keymap.set({ "n", "v" }, "<leader>K", anthropic.invoke, { desc = "llm anthropic" })
 			vim.keymap.set({ "n", "v" }, "<leader>L", openai.invoke, { desc = "llm openai" })
 		end,
 	},
