@@ -22,7 +22,14 @@ local my_models = {
 		gemma_1 = "gemma-7b-it",
 		mixtral_8x7b = "mixtral-8x7b-32768",
 	},
-	ollama = {},
+	ollama = {
+		gemma_2 = "gemma2:27b",
+		llama_3_1 = "llama3.1:70b-instruct-q4_0",
+		hermes_2 = "nous-hermes2:34b",
+		yi = "yi:34b",
+		deepseek_coder_v2 = "deepseek-coder-v2",
+		dolphin_mixtral = "dolphin-mixtral:latest",
+	},
 }
 
 return my_models
