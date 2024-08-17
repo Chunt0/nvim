@@ -7,6 +7,7 @@ return {
 			local openai = require("openai")
 			local anthropic = require("anthropic")
 			local perplexity = require("perplexity")
+			local ollama = require("ollama")
 			local prompts = require("prompts")
 			local my_prompts = require("custom/my_prompts")
 			local models = require("models")
@@ -26,8 +27,10 @@ return {
 			-- vars.presence_penalty =  -- value between -2 - 2  default is 0, a higher value increases penalty for repeating previously produced tokens
 
 			vim.keymap.set({ "n", "v" }, "<leader>H", groq.invoke, { desc = "llm groq" })
-			vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.invoke, { desc = "llm perplexity" })
-			vim.keymap.set({ "n", "v" }, "<leader>K", anthropic.invoke, { desc = "llm anthropic" })
+			--vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.invoke, { desc = "llm perplexity" })
+			--vim.keymap.set({ "n", "v" }, "<leader>K", anthropic.invoke, { desc = "llm anthropic" })
+			vim.keymap.set({ "n", "v" }, "<leader>K", ollama.invoke, { desc = "llm ollama" })
+			vim.keymap.set({ "n", "v" }, "<leader>k", ollama.code, { desc = "llm ollama code" })
 			vim.keymap.set({ "n", "v" }, "<leader>L", openai.invoke, { desc = "llm openai" })
 		end,
 	},
