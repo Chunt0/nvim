@@ -19,7 +19,7 @@ return {
 			-- models.groq = my_models.groq.mixtral_8x7b -- Use mixtral_8x7b instead of default llama3.1-70b-versatile
 
 			-- Example use of system_prompt set up
-			prompts.system_prompt = my_prompts.faithful_prompt
+			prompts.system_prompt = my_prompts.helpful_prompt
 
 			-- Example use of vars
 			-- vars.temp = 1.5 -- value between 0 - 2 default is 0.7, increases randomness in token sampling. Higher values create greater randomness.
@@ -28,9 +28,9 @@ return {
 
 			vim.keymap.set({ "n", "v" }, "<leader>H", groq.invoke, { desc = "llm groq" })
 			--vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.invoke, { desc = "llm perplexity" })
-			--vim.keymap.set({ "n", "v" }, "<leader>K", anthropic.invoke, { desc = "llm anthropic" })
+			vim.keymap.set({ "n", "v" }, "<leader>J", anthropic.invoke, { desc = "llm anthropic" })
 			vim.keymap.set({ "n", "v" }, "<leader>K", ollama.invoke, { desc = "llm ollama" })
-			vim.keymap.set({ "n", "v" }, "<leader>k", ollama.code, { desc = "llm ollama code" })
+			--vim.keymap.set({ "n", "v" }, "<leader>k", ollama.code, { desc = "llm ollama code" })
 			vim.keymap.set({ "n", "v" }, "<leader>L", openai.invoke, { desc = "llm openai" })
 		end,
 	},
