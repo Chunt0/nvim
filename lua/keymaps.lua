@@ -58,4 +58,14 @@ vim.keymap.set("n", "<leader>tn", ":tabnext<CR>", { noremap = true, silent = tru
 vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>tc", ":tabnew<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { noremap = true, silent = true })
+
+function CloseBufferAndOpenVertically()
+	if vim.bo.buftype == "terminal" then
+		vim.cmd("bd!")
+	else
+		vim.cmd("bd")
+	end
+	vim.cmd("vnew")
+end
+vim.keymap.set("n", "<leader>cv", [[:lua CloseBufferAndOpenVertically()<CR>]], { noremap = true, silent = true })
 -- vim: ts=2 sts=2 sw=2 et
