@@ -26,11 +26,12 @@ return {
 			-- vars.top_p = 0.5 -- value between 0 - 1 default is 1, determines the range of possible tokens to be sampled from. A value less than 1 reduces the space of possible tokens to be sampled
 			-- vars.presence_penalty =  -- value between -2 - 2  default is 0, a higher value increases penalty for repeating previously produced tokens
 
-			vim.keymap.set({ "n", "v" }, "<leader>H", groq.invoke, { desc = "llm groq" })
+			--vim.keymap.set({ "n", "v" }, "<leader>H", groq.invoke, { desc = "llm groq" })
 			--vim.keymap.set({ "n", "v" }, "<leader>J", perplexity.invoke, { desc = "llm perplexity" })
 			vim.keymap.set({ "n", "v" }, "<leader>J", anthropic.invoke, { desc = "llm anthropic" })
-			vim.keymap.set({ "n", "v" }, "<leader>K", ollama.invoke, { desc = "llm ollama" })
-			--vim.keymap.set({ "n", "v" }, "<leader>k", ollama.code, { desc = "llm ollama code" })
+			--vim.keymap.set({ "n", "v" }, "<leader>K", ollama.invoke, { desc = "llm ollama" })
+			vim.keymap.set({ "n", "v" }, "<leader>K", ollama.code, { desc = "llm ollama code" })
+			vim.keymap.set({ "n", "v" }, "<leader>l", openai.dalle, { desc = "llm openai" })
 			vim.keymap.set({ "n", "v" }, "<leader>L", openai.invoke, { desc = "llm openai" })
 		end,
 	},
