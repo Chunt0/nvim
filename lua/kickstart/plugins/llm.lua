@@ -15,7 +15,7 @@ return {
 			local vars = require("variables")
 
 			-- Example use of models
-			models.openai = my_models.openai.o1_mini -- Use gpt-4o-mini instead of default gpt-4o
+			-- models.openai = my_models.openai.o1_mini -- Use gpt-4o-mini instead of default gpt-4o
 			models.ollama = my_models.ollama.deepseek_coder_v2
 			-- models.groq = my_models.groq.mixtral_8x7b -- Use mixtral_8x7b instead of default llama3.1-70b-versatile
 
