@@ -29,8 +29,9 @@ return {
 
 			vim.keymap.set({ "n", "v" }, "<leader>J", anthropic.invoke, { desc = "llm anthropic" })
 			vim.keymap.set({ "n", "v" }, "<leader>j", anthropic.code, { desc = "llm anthropic code" })
-			vim.keymap.set({ "n", "v" }, "<leader>K", ollama.invoke, { desc = "llm ollama" })
-			vim.keymap.set({ "n", "v" }, "<leader>k", ollama.code, { desc = "llm ollama code" })
+			vim.keymap.set({ "n", "v" }, "<leader>k", anthropic.code_chat, { desc = "llm ollama code" })
+			-- vim.keymap.set({ "n", "v" }, "<leader>K", ollama.invoke, { desc = "llm ollama" })
+			-- vim.keymap.set({ "n", "v" }, "<leader>k", ollama.code, { desc = "llm ollama code" })
 			vim.keymap.set({ "n", "v" }, "<leader>L", openai.invoke, { desc = "llm openai" })
 			vim.keymap.set({ "n", "v" }, "<leader>l", openai.code, { desc = "llm openai code" })
 		end,
