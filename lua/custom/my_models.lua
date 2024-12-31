@@ -3,6 +3,8 @@ local my_models = {
 		gpt_4o = "gpt-4o",
 		gpt_4o_mini = "gpt-4o-mini",
 		gpt_3_5 = "gpt-3.5-turbo-0125",
+		o1_preview = "o1-preview",
+		o1_mini = "o1-mini-2024-09-12",
 	},
 	perplexity = {
 		perplexity_chat = "llama-3.1-sonar-large-128k-chat",
@@ -29,6 +31,7 @@ local my_models = {
 		yi = "yi:34b",
 		deepseek_coder_v2 = "deepseek-coder-v2",
 		dolphin_mixtral = "dolphin-mixtral:latest",
+		hermes_3 = "hermes3:70b-llama3.1-q4_0",
 	},
 }
 
