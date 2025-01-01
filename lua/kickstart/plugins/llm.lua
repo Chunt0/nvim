@@ -27,14 +27,48 @@ return {
 			-- vars.top_p = 0.5 -- value between 0 - 1 default is 1, determines the range of possible tokens to be sampled from. A value less than 1 reduces the space of possible tokens to be sampled
 			-- vars.presence_penalty =  -- value between -2 - 2  default is 0, a higher value increases penalty for repeating previously produced tokens
 
-			vim.keymap.set({ "n", "v" }, "<leader>J", anthropic.invoke, { desc = "llm anthropic" })
-			vim.keymap.set({ "n", "v" }, "<leader>j", anthropic.code, { desc = "llm anthropic code" })
-			vim.keymap.set({ "n", "v" }, "<leader>k", anthropic.code_chat, { desc = "llm ollama code" })
-			-- vim.keymap.set({ "n", "v" }, "<leader>K", ollama.invoke, { desc = "llm ollama" })
-			-- vim.keymap.set({ "n", "v" }, "<leader>k", ollama.code, { desc = "llm ollama code" })
-			vim.keymap.set({ "n", "v" }, "<leader>L", openai.invoke, { desc = "llm openai" })
-			vim.keymap.set({ "n", "v" }, "<leader>l", openai.code, { desc = "llm openai code" })
+			--
+			-- Improved key mappings with more consistent naming and grouping
+			-- Anthropic
+			vim.keymap.set({ "n", "v" }, "<leader>ai", anthropic.invoke, { desc = "LLM Anthropic: Invoke" })
+			vim.keymap.set({ "n", "v" }, "<leader>ac", anthropic.code, { desc = "LLM Anthropic: Code" })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>ab",
+				anthropic.code_all_buf,
+				{ desc = "LLM Anthropic: Code entire buffer" }
+			)
+			vim.keymap.set({ "n", "v" }, "<leader>at", anthropic.code_chat, { desc = "LLM Anthropic: Code chat" })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>aa",
+				anthropic.code_chat_all_buf,
+				{ desc = "LLM Anthropic: Code chat entire buffer" }
+			)
+
+			-- OpenAI
+			vim.keymap.set({ "n", "v" }, "<leader>oi", openai.invoke, { desc = "LLM OpenAI: Invoke" })
+			vim.keymap.set({ "n", "v" }, "<leader>oc", openai.code, { desc = "LLM OpenAI: Code" })
+			vim.keymap.set({ "n", "v" }, "<leader>ob", openai.code_all_buf, { desc = "LLM OpenAI: Code entire buffer" })
+			vim.keymap.set({ "n", "v" }, "<leader>ot", openai.code_chat, { desc = "LLM OpenAI: Code chat" })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>oa",
+				openai.code_chat_all_buf,
+				{ desc = "LLM OpenAI: Code chat entire buffer" }
+			)
+
+			-- Ollama (commented out)
+			vim.keymap.set({ "n", "v" }, "<leader>li", ollama.invoke, { desc = "LLM Ollama: Invoke" })
+			vim.keymap.set({ "n", "v" }, "<leader>lc", ollama.code, { desc = "LLM Ollama: Code" })
+			vim.keymap.set({ "n", "v" }, "<leader>lb", ollama.code_all_buf, { desc = "LLM Ollama: Code entire buffer" })
+			vim.keymap.set({ "n", "v" }, "<leader>lt", ollama.code_chat, { desc = "LLM OpenAI: Code chat" })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>la",
+				ollama.code_chat_all_buf,
+				{ desc = "LLM OpenAI: Code chat entire buffer" }
+			)
 		end,
 	},
 }
--- vim: ts=2 sts=2 sw=2 et
