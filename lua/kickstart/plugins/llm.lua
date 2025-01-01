@@ -3,11 +3,14 @@ return {
 		"Chunt0/llm.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			local groq = require("groq")
+			-- Import models
 			local openai = require("openai")
 			local anthropic = require("anthropic")
-			local perplexity = require("perplexity")
 			local ollama = require("ollama")
+			-- local groq = require("groq")
+			-- local perplexity = require("perplexity")
+
+			-- Import configurable params
 			local prompts = require("prompts")
 			local my_prompts = require("custom/my_prompts")
 			local models = require("models")
@@ -16,11 +19,11 @@ return {
 
 			-- Example use of models
 			-- models.openai = my_models.openai.o1_mini -- Use gpt-4o-mini instead of default gpt-4o
-			models.ollama = my_models.ollama.deepseek_coder_v2
+			-- models.ollama = my_models.ollama.deepseek_coder_v2
 			-- models.groq = my_models.groq.mixtral_8x7b -- Use mixtral_8x7b instead of default llama3.1-70b-versatile
 
 			-- Example use of system_prompt set up
-			prompts.system_prompt = my_prompts.helpful_prompt
+			-- prompts.system_prompt = my_prompts.helpful_prompt
 
 			-- Example use of vars
 			-- vars.temp = 1.5 -- value between 0 - 2 default is 0.7, increases randomness in token sampling. Higher values create greater randomness.
@@ -58,7 +61,7 @@ return {
 				{ desc = "LLM OpenAI: Code chat entire buffer" }
 			)
 
-			-- Ollama (commented out)
+			-- Ollama
 			vim.keymap.set({ "n", "v" }, "<leader>li", ollama.invoke, { desc = "LLM Ollama: Invoke" })
 			vim.keymap.set({ "n", "v" }, "<leader>lc", ollama.code, { desc = "LLM Ollama: Code" })
 			vim.keymap.set({ "n", "v" }, "<leader>lb", ollama.code_all_buf, { desc = "LLM Ollama: Code entire buffer" })
