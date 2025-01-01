@@ -11,8 +11,9 @@ local my_models = {
 		perplexity_online = "llama-3.1-sonar-large-128k-online",
 	},
 	anthropic = {
-		claude_sonnet = "claude-3-5-sonnet-20240620",
-		claude_opus = "claude-3-opus-20240220",
+		calude_haiku = "claude-3-5-haiku-latest",
+		claude_sonnet = "claude-3-5-sonnet-latest",
+		claude_opus = "claude-3-opus-latest",
 	},
 	groq = {
 		llama_3_1_70b = "llama-3.1-70b-versatile",
