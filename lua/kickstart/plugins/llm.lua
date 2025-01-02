@@ -4,6 +4,7 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			-- Import models
+			local llm = require("llm")
 			local openai = require("openai")
 			local anthropic = require("anthropic")
 			local ollama = require("ollama")
@@ -19,7 +20,7 @@ return {
 
 			-- Example use of models
 			-- models.openai = my_models.openai.o1_mini -- Use gpt-4o-mini instead of default gpt-4o
-			-- models.ollama = my_models.ollama.deepseek_coder_v2
+			models.anthropic = my_models.anthropic.calude_haiku
 			-- models.groq = my_models.groq.mixtral_8x7b -- Use mixtral_8x7b instead of default llama3.1-70b-versatile
 
 			-- Example use of system_prompt set up
@@ -30,8 +31,13 @@ return {
 			-- vars.top_p = 0.5 -- value between 0 - 1 default is 1, determines the range of possible tokens to be sampled from. A value less than 1 reduces the space of possible tokens to be sampled
 			-- vars.presence_penalty =  -- value between -2 - 2  default is 0, a higher value increases penalty for repeating previously produced tokens
 
-			--
-			-- Improved key mappings with more consistent naming and grouping
+			-- Clear message buffer
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>zz",
+				llm.reset_message_buffers,
+				{ desc = "Resets LLM message buffers" }
+			)
 			-- Anthropic
 			vim.keymap.set({ "n", "v" }, "<leader>ai", anthropic.invoke, { desc = "LLM Anthropic: Invoke" })
 			vim.keymap.set({ "n", "v" }, "<leader>ac", anthropic.code, { desc = "LLM Anthropic: Code" })
