@@ -4,6 +4,8 @@ local my_models = {
 		gpt_4o_mini = "gpt-4o-mini",
 		gpt_3_5 = "gpt-3.5-turbo-0125",
 		o1_preview = "o1-preview",
+		gpt_4_1 = "gpt-4.1",
+		gpt_4_1_nano = "gpt-4.1-nano",
 		o1_mini = "o1-mini-2024-09-12",
 	},
 	perplexity = {

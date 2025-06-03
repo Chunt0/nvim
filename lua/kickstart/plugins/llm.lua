@@ -17,7 +17,8 @@ return {
 			local constants = require("constants")
 
 			-- Example use of models
-			-- constants.models.openai = my_models.openai.o1_mini -- Use gpt-4o-mini instead of default gpt-4o
+			constants.models.openai = my_models.openai.gpt_4_1_nano -- Use gpt-4o-mini instead of default gpt-4o
+			constants.models.anthropic = my_models.anthropic.claude_sonnet
 			-- constants.models.groq = my_models.groq.mixtral_8x7b -- Use mixtral_8x7b instead of default llama3.1-70b-versatile
 
 			-- Example use of system_prompt set up
