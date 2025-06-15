@@ -62,6 +62,13 @@ vim.opt.scrolloff = 10
 -- Show the 80th column
 vim.opt.colorcolumn = "80"
 
+vim.opt.guicursor = {
+	"n-v-c-sm:hor25", -- Normal/Visual/Command-line: block
+	"i-ci-ve:ver25", -- Insert/Command-preview: vertical bar, 25% width
+	"r-cr:hor20", -- Replace & virtual replace: horizontal bar, 20% height
+	"a:blinkwait700-blinkoff400-blinkon250", -- all modes: blinking cursor timing
+}
+
 -- Open nvim with a terminal
 --vim.api.nvim_create_autocmd("VimEnter", {
 --	callback = function()
