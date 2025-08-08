@@ -1,5 +1,8 @@
 local my_models = {
 	openai = {
+		gpt_5 = "gpt-5",
+		gpt_5_mini = "gpt-5-mini",
+		gpt_5_nano = "gpt-5-nano",
 		gpt_4o = "gpt-4o",
 		gpt_4o_mini = "gpt-4o-mini",
 		gpt_3_5 = "gpt-3.5-turbo-0125",
