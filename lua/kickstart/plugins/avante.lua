@@ -21,7 +21,7 @@ return {
 					timeout = 30000, -- Timeout in milliseconds
 					extra_request_body = {
 						temperature = 1,
-						max_tokens = 20480,
+						max_completion_tokens = 20480,
 					},
 				},
 			},
