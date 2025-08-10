@@ -17,7 +17,7 @@ return {
 			local constants = require("constants")
 
 			-- Example use of models
-			constants.models.openai = my_models.openai.gpt_4_1 -- Use gpt-4o-mini instead of default gpt-4o
+			constants.models.openai = my_models.openai.gpt_5 -- Use gpt-4o-mini instead of default gpt-4o
 			constants.models.anthropic = my_models.anthropic.claude_sonnet
 			-- constants.models.groq = my_models.groq.mixtral_8x7b -- Use mixtral_8x7b instead of default llama3.1-70b-versatile
 
@@ -25,7 +25,7 @@ return {
 			-- constants.prompts.system_prompt = my_prompts.helpful_prompt
 
 			-- Example use of vars
-			-- constants.vars.temp = 1.5 -- value between 0 - 2 default is 0.7, increases randomness in token sampling. Higher values create greater randomness.
+			constants.vars.temp = 1 -- value between 0 - 2 default is 0.7, increases randomness in token sampling. Higher values create greater randomness.
 			-- constants.vars.top_p = 0.5 -- value between 0 - 1 default is 1, determines the range of possible tokens to be sampled from. A value less than 1 reduces the space of possible tokens to be sampled
 			-- constants.vars.presence_penalty =  -- value between -2 - 2  default is 0, a higher value increases penalty for repeating previously produced tokens
 
