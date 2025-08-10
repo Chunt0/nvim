@@ -17,7 +17,7 @@ return {
 			local constants = require("constants")
 
 			-- Example use of models
-			constants.models.openai = my_models.openai.gpt_5_nano -- Use gpt-4o-mini instead of default gpt-4o
+			constants.models.openai = my_models.openai.gpt_4_1_nano -- Use gpt-4o-mini instead of default gpt-4o
 			constants.models.ollama = my_models.ollama.gpt_oss -- Use gpt-4o-mini instead of default gpt-4o
 
 			--constants.models.anthropic = my_models.anthropic.claude_sonnet
