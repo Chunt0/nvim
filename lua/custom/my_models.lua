@@ -31,7 +31,8 @@ local my_models = {
 		mixtral_8x7b = "mixtral-8x7b-32768",
 	},
 	ollama = {
-		gemma_2 = "gemma2:27b",
+		gemma_3 = "gemma3:27b",
+		gpt_oss = "gpt-oss:120b",
 		llama_3_1 = "llama3.1:70b-instruct-q4_0",
 		hermes_2 = "nous-hermes2:34b",
 		yi = "yi:34b",

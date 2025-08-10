@@ -7,7 +7,7 @@ return {
 			local llm = require("llm")
 			local openai = require("openai")
 			--local anthropic = require("anthropic")
-			--local ollama = require("ollama")
+			local ollama = require("ollama")
 			-- local groq = require("groq")
 			-- local perplexity = require("perplexity")
 
@@ -17,7 +17,9 @@ return {
 			local constants = require("constants")
 
 			-- Example use of models
-			constants.models.openai = my_models.openai.gpt_5 -- Use gpt-4o-mini instead of default gpt-4o
+			constants.models.openai = my_models.openai.gpt_5_nano -- Use gpt-4o-mini instead of default gpt-4o
+			constants.models.ollama = my_models.ollama.gpt_oss -- Use gpt-4o-mini instead of default gpt-4o
+
 			--constants.models.anthropic = my_models.anthropic.claude_sonnet
 			-- constants.models.groq = my_models.groq.mixtral_8x7b -- Use mixtral_8x7b instead of default llama3.1-70b-versatile
 
@@ -66,16 +68,16 @@ return {
 			)
 
 			-- Ollama
-			--vim.keymap.set({ "n", "v" }, "<leader>li", ollama.invoke, { desc = "LLM Ollama: Invoke" })
-			--vim.keymap.set({ "n", "v" }, "<leader>lc", ollama.code, { desc = "LLM Ollama: Code" })
-			--vim.keymap.set({ "n", "v" }, "<leader>lb", ollama.code_all_buf, { desc = "LLM Ollama: Code entire buffer" })
-			--vim.keymap.set({ "n", "v" }, "<leader>lt", ollama.code_chat, { desc = "LLM OpenAI: Code chat" })
-			--vim.keymap.set(
-			--	{ "n", "v" },
-			--	"<leader>la",
-			--	ollama.code_chat_all_buf,
-			--	{ desc = "LLM OpenAI: Code chat entire buffer" }
-			--)
+			vim.keymap.set({ "n", "v" }, "<leader>li", ollama.invoke, { desc = "LLM Ollama: Invoke" })
+			vim.keymap.set({ "n", "v" }, "<leader>lc", ollama.code, { desc = "LLM Ollama: Code" })
+			vim.keymap.set({ "n", "v" }, "<leader>lb", ollama.code_all_buf, { desc = "LLM Ollama: Code entire buffer" })
+			vim.keymap.set({ "n", "v" }, "<leader>lt", ollama.code_chat, { desc = "LLM OpenAI: Code chat" })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>la",
+				ollama.code_chat_all_buf,
+				{ desc = "LLM OpenAI: Code chat entire buffer" }
+			)
 		end,
 	},
 }
