@@ -58,6 +58,7 @@ require("lazy").setup({
 	require("kickstart.plugins.autopairs"),
 	require("kickstart.plugins.neo-tree"),
 	require("kickstart.plugins.llm"),
+	require("kickstart.plugins.avante"),
 	require("kickstart.plugins.buftabline"),
 	require("kickstart.plugins.dash"),
 	require("kickstart.plugins.typescript_tools"),
