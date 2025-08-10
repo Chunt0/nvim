@@ -16,7 +16,7 @@ return {
 			provider = "openai",
 			providers = {
 				openai = {
-					endpoint = "https://api.openai.com/v1.com",
+					endpoint = "https://api.openai.com/v1",
 					model = "gpt-5",
 					timeout = 30000, -- Timeout in milliseconds
 					extra_request_body = {
