@@ -17,7 +17,7 @@ return {
 			providers = {
 				openai = {
 					endpoint = "https://api.openai.com/v1",
-					model = "gpt-5",
+					model = "gpt-5-nano",
 					timeout = 30000, -- Timeout in milliseconds
 					extra_request_body = {
 						temperature = 1,
