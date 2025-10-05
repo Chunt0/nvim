@@ -10,7 +10,7 @@ return {
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
-			local dap_python = require("dap-python")
+			local dap_python = require("dap-python").setup("uv")
 
 			require("dapui").setup({})
 			require("nvim-dap-virtual-text").setup({

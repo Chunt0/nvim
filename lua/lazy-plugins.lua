@@ -61,7 +61,7 @@ require("lazy").setup({
 	require("kickstart.plugins.llm"),
 	require("kickstart.plugins.buftabline"),
 	require("kickstart.plugins.dash"),
-	--require("kickstart.plugins.dap"),
+	require("kickstart.plugins.dap"),
 	require("kickstart.plugins.typescript_tools"),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
